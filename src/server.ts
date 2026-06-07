@@ -17,7 +17,11 @@ app.get("/user", (req: Request, res: Response) => {
 });
 
 app.post("/", async (req: Request, res: Response) => {
-  console.log(req.body);
+  const body = req.body;
+  res.status(201).json({
+    message: "Created",
+    data: body,
+  });
 });
 
 app.listen(port, () => {
